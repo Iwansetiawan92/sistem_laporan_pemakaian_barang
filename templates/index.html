@@ -1,0 +1,35 @@
+
+---
+
+## 📄 `templates/index.html`
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Laporan Pemakaian Barang</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <h1>Laporan Pemakaian Barang</h1>
+    <a href="/tambah">+ Tambah Laporan</a>
+    <table border="1">
+        <tr>
+            <th>Tanggal</th>
+            <th>Departemen</th>
+            <th>Nama Barang</th>
+            <th>Jumlah</th>
+            <th>Satuan</th>
+        </tr>
+        {% for row in laporan %}
+        <tr>
+            <td>{{ row['tanggal'] }}</td>
+            <td>{{ row['departemen'] }}</td>
+            <td>{{ row['nama_barang'] }}</td>
+            <td>{{ row['jumlah'] }}</td>
+            <td>{{ row['satuan'] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
